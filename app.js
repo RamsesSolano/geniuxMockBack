@@ -22,6 +22,19 @@ app.get('/', (req, res) => {
 
 })
 
+app.post('/create-profile', (req, res) => {
+  const body = req.body;
+  let responseMessage = 'User logged in successfully';
+  let status = true;
+ 
+  res.send({
+    "success": status,
+    "message": responseMessage,
+    "data": body
+  })
+
+})
+
 app.post('/login', (req, res) => {
     const body = req.body;
     let responseMessage = 'User logged in successfully';
@@ -31,10 +44,8 @@ app.post('/login', (req, res) => {
       status = false;
        
       if( body.username !== 'admin'  ){
-        responseMessage = 'Usuario incorrecto';
-      }
-  
-      if( body.password !== 'admin' ){
+        responseMessage = 'Usuario no encontrado';
+      } else if( body.password !== 'admin' ){
         responseMessage = 'Contraseña incorrecta';
       }
 
