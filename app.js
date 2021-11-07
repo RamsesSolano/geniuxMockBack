@@ -22,6 +22,31 @@ app.get('/', (req, res) => {
 
 })
 
+app.put( '/data-company', (req, res) => {
+  const body = req.body;
+  let responseMessage = 'User logged in successfully';
+  let status = true;
+ 
+  res.send({
+    "success": status,
+    "message": responseMessage,
+    "data": body
+  })
+});
+
+app.post('/data-company', (req, res) => {
+  const body = req.body;
+  let responseMessage = 'User logged in successfully';
+  let status = true;
+ 
+  res.send({
+    "success": status,
+    "message": responseMessage,
+    "data": body
+  })
+
+})
+
 app.post('/create-profile', (req, res) => {
   const body = req.body;
   let responseMessage = 'User logged in successfully';
