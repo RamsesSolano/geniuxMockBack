@@ -84,6 +84,17 @@ app.post('/login', (req, res) => {
 
 })
 
+app.post('/create-profile', (req, res) => {
+  const body = req.body;
+   
+  res.send({
+    "success": true,
+    "message": responseMessage,
+    "data": body
+  })
+
+})
+
 app.post('/', (req, res) => {
     res.send({
         "success": true,
